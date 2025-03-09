@@ -102,8 +102,8 @@ if st.sidebar.button("Get Recommendation"):
     result = recommend_workout(steps, workout, sleep, bmi)
     st.markdown(result, unsafe_allow_html=True)
 
-    st.subheader("🥗 Recommended Diet Plan")
+    st.subheader("<span style='color:red'>🥗 Recommended Diet Plan</span>", unsafe_allow_html=True)
     if diet_chart != "No diet data available.":
-        st.info(f"🍽 **Recommended Meal:** {diet_chart}")
+        st.markdown(f"<span style='color:red'>🍽 **Recommended Meal:** {diet_chart}</span>", unsafe_allow_html=True)
     else:
         st.warning("No diet recommendations available. Please check 'dietchartdataset.csv'.")
