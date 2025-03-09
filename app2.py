@@ -8,7 +8,7 @@ def get_base64_of_image(image_path):
         return base64.b64encode(img_file.read()).decode()
 
 # Provide correct local path of the image
-image_path = "background.jpg"  # Ensure this file is in the same directory
+image_path = "image.webp"  # Ensure this file is in the same directory
 
 # Custom CSS for Background Image & Styling
 page_bg_img = f'''
