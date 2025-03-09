@@ -60,10 +60,10 @@ def calculate_calories_burned(steps, workout, weight):
 
 # Fitness Recommendation
 def recommend_workout(steps, workout, sleep, bmi):
-    step_advice = "<span style='color:red'>Great job! Maintain your activity level.</span>" if steps >= 10000 else "<span style='color:red'>Try to hit 10,000 steps daily.</span>"
-    workout_advice = "<span style='color:red'>You're working out enough!</span>" if workout >= 30 else "<span style='color:red'>Increase your workout time to at least 30 minutes.</span>"
-    sleep_advice = "<span style='color:red'>Your sleep is good!</span>" if sleep >= 6 else "<span style='color:red'>Try to get 7-8 hours of sleep.</span>"
-    bmi_advice = f"<span style='color:red'>Your BMI is {bmi}, which is in the "
+    step_advice = "<span style='color:yellow'>Great job! Maintain your activity level.</span>" if steps >= 10000 else "<span style='color:red'>Try to hit 10,000 steps daily.</span>"
+    workout_advice = "<span style='color:yellow'>You're working out enough!</span>" if workout >= 30 else "<span style='color:red'>Increase your workout time to at least 30 minutes.</span>"
+    sleep_advice = "<span style='color:yellow'>Your sleep is good!</span>" if sleep >= 6 else "<span style='color:red'>Try to get 7-8 hours of sleep.</span>"
+    bmi_advice = f"<span style='color:yellow'>Your BMI is {bmi}, which is in the "
 
     if bmi < 18.5:
         bmi_advice += "**Underweight** category. Consider gaining some weight.</span>"
@@ -94,7 +94,7 @@ bmi = calculate_bmi(weight, height)
 calories_burned = calculate_calories_burned(steps, workout, weight)
 diet_chart = generate_diet_chart(bmi)
 
-if st.sidebar.button("Get Recommendation"):
+if st.sidebar.button("<span style='color:red'>Get Recommendation</span>", unsafe_allow_html=True):
     st.subheader("📊 Your Fitness Summary")
     st.write(f"🔥 **Calories Burned Today:** {calories_burned} kcal")
     st.write(f"⚖ **Your BMI:** {bmi}")
