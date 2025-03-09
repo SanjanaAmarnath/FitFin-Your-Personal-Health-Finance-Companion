@@ -1,6 +1,5 @@
-# FitFin-Your-Personal-Health-Finance-Companion
-Balance Your Body &amp; Budget – Stay Fit, Stay Financially Smart!
 # FitFin: Your Personal Health & Finance Companion 🏋💰
+Balance Your Body &amp; Budget – Stay Fit, Stay Financially Smart!
 
 ## 🚀 Live Demo
 [🌍https://fitfin-your-personal-health-finance-companion-arzpmttz7emwjbvr.streamlit.app/)
