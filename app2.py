@@ -24,12 +24,6 @@ if base64_image:
         background-size: cover;
         color: white;
     }}
-    .stSuccess {{
-        background-color: darkgreen !important;
-        color: white !important;
-        padding: 10px;
-        border-radius: 5px;
-    }}
     </style>
     '''
     st.markdown(page_bg_img, unsafe_allow_html=True)
@@ -38,18 +32,12 @@ if base64_image:
 st.title("🏋 Personal Fitness & Diet Tracker")
 st.write("### Track your health, stay fit, and get personalized diet recommendations!")
 
-# Load diet dataset (Use file uploader or fallback to local file)
-st.sidebar.header("📂 Upload Your Diet Dataset (Optional)")
-uploaded_file = st.sidebar.file_uploader("Upload a CSV file", type=["csv"])
-
-if uploaded_file:
-    diet_df = pd.read_csv(uploaded_file)
-else:
-    try:
-        diet_df = pd.read_csv("dietchartdataset.csv")  # Ensure this file is uploaded
-    except FileNotFoundError:
-        diet_df = None
-        st.error("⚠ Diet dataset not found! Upload a CSV file.")
+# Load diet dataset
+try:
+    diet_df = pd.read_csv("dietchartdataset.csv")  # Ensure this file is uploaded
+except FileNotFoundError:
+    diet_df = None
+    st.error("⚠ Diet dataset not found! Please add 'dietchartdataset.csv' to your app directory.")
 
 # Sidebar for User Input
 st.sidebar.header("🔹 Enter Your Details")
@@ -112,11 +100,11 @@ if st.sidebar.button("Get Recommendation"):
     st.write(f"⚖ **Your BMI:** {bmi}")
 
     result = recommend_workout(steps, workout, sleep, bmi)
-    st.markdown(f'<div class="stSuccess">{result}</div>', unsafe_allow_html=True)
+    st.success(result)
 
     st.subheader("🥗 Recommended Diet Plan")
     if diet_chart != "No diet data available.":
         st.info(f"🍽 **Recommended Meal:** {diet_chart}")
     else:
-        st.warning("No diet recommendations available. Please upload a valid dataset.")
+        st.warning("No diet recommendations available. Please check 'dietchartdataset.csv'.")
 
