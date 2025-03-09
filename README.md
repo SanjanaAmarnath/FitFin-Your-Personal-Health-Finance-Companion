@@ -1,5 +1,5 @@
 # FitFin: Your Personal Health & Finance Companion 🏋💰
-Balance Your Body &amp;Stay Fit, Stay Mentally Smart!
+Balance Your Body &amp; Stay Fit, Stay Mentally Smart!
 
 ## 🚀 Live Demo
 [🌍https://fitfin-your-personal-health-finance-companion-arzpmttz7emwjbvr.streamlit.app/)
