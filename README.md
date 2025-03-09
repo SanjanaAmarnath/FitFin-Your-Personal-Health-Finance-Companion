@@ -50,5 +50,5 @@ Contributions are welcome! Feel free to fork this repo and submit a PR.
 This project is licensed under the **MIT License**.
 
 ---
-🚀 **Stay Fit & Financially Smart with FitFin!** 💪💰
+🚀 **Stay Fit & Mentally Smart with FitFin!** 💪💰
 
