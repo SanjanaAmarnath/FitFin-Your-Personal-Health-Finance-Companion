@@ -8,7 +8,7 @@ def get_base64_of_image(image_path):
         return base64.b64encode(img_file.read()).decode()
 
 # Provide correct local path of the image
-image_path = '/Users/sanjanadonthula/Downloads/fitness app/image.webp'  # Ensure this file is in the same directory or provide a full path
+image_path = ''/Users/sanjanadonthula/Documents/fitness app/image.webp''  # Ensure this file is in the same directory or provide a full path
 base64_image = get_base64_of_image(image_path)
 
 # Custom CSS for Background Image & Styling
