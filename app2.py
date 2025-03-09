@@ -8,19 +8,15 @@ def get_base64_of_image(image_path):
         return base64.b64encode(img_file.read()).decode()
 
 # Provide correct local path of the image
-image_path = "image.webp"  # Ensure this file is in the same directory
-try:
-    base64_image = get_base64_of_image(image_path)
-except FileNotFoundError:
-    base64_image = None
+image_path = "background.jpg"  # Ensure this file is in the same directory
 
-# Custom CSS for Dark Theme Styling
-if base64_image:
-    page_bg_img = f'''
+# Custom CSS for Background Image & Styling
+page_bg_img = f'''
     <style>
     .stApp {{
-        background: #121212;
-        color: #ffffff;
+        background: url("{image_path}") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
     }}
     .sidebar .sidebar-content {{
         background: #1e1e1e;
@@ -32,7 +28,7 @@ if base64_image:
     }}
     </style>
     '''
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Title & Introduction
 st.title("🏋 Personal Fitness & Diet Tracker")
