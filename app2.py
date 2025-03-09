@@ -94,7 +94,7 @@ bmi = calculate_bmi(weight, height)
 calories_burned = calculate_calories_burned(steps, workout, weight)
 diet_chart = generate_diet_chart(bmi)
 
-if st.sidebar.button("<span style='color:red'>Get Recommendation</span>", unsafe_allow_html=True):
+if st.sidebar.button("<span style='color:black'>Get Recommendation</span>", unsafe_allow_html=True):
     st.subheader("📊 Your Fitness Summary")
     st.write(f"🔥 **Calories Burned Today:** {calories_burned} kcal")
     st.write(f"⚖ **Your BMI:** {bmi}")
