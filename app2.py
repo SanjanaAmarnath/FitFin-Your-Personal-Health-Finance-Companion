@@ -60,19 +60,19 @@ def calculate_calories_burned(steps, workout, weight):
 
 # Fitness Recommendation
 def recommend_workout(steps, workout, sleep, bmi):
-    step_advice = "Great job! Maintain your activity level." if steps >= 10000 else "Try to hit 10,000 steps daily."
-    workout_advice = "You're working out enough!" if workout >= 30 else "Increase your workout time to at least 30 minutes."
-    sleep_advice = "Your sleep is good!" if sleep >= 6 else "Try to get 7-8 hours of sleep."
-    bmi_advice = f"Your BMI is {bmi}, which is in the "
+    step_advice = "<span style='color:red'>Great job! Maintain your activity level.</span>" if steps >= 10000 else "<span style='color:red'>Try to hit 10,000 steps daily.</span>"
+    workout_advice = "<span style='color:red'>You're working out enough!</span>" if workout >= 30 else "<span style='color:red'>Increase your workout time to at least 30 minutes.</span>"
+    sleep_advice = "<span style='color:red'>Your sleep is good!</span>" if sleep >= 6 else "<span style='color:red'>Try to get 7-8 hours of sleep.</span>"
+    bmi_advice = f"<span style='color:red'>Your BMI is {bmi}, which is in the "
 
     if bmi < 18.5:
-        bmi_advice += "**Underweight** category. Consider gaining some weight."
+        bmi_advice += "**Underweight** category. Consider gaining some weight.</span>"
     elif 18.5 <= bmi < 25:
-        bmi_advice += "**Healthy Weight** range. Keep up the good work!"
+        bmi_advice += "**Healthy Weight** range. Keep up the good work!</span>"
     elif 25 <= bmi < 30:
-        bmi_advice += "**Overweight** category. Consider adjusting your diet & exercise."
+        bmi_advice += "**Overweight** category. Consider adjusting your diet & exercise.</span>"
     else:
-        bmi_advice += "**Obese** category. Focus on fitness & a balanced diet."
+        bmi_advice += "**Obese** category. Focus on fitness & a balanced diet.</span>"
 
     return f"{step_advice} {workout_advice} {sleep_advice} {bmi_advice}"
 
@@ -100,11 +100,10 @@ if st.sidebar.button("Get Recommendation"):
     st.write(f"⚖ **Your BMI:** {bmi}")
 
     result = recommend_workout(steps, workout, sleep, bmi)
-    st.success(result)
+    st.markdown(result, unsafe_allow_html=True)
 
     st.subheader("🥗 Recommended Diet Plan")
     if diet_chart != "No diet data available.":
         st.info(f"🍽 **Recommended Meal:** {diet_chart}")
     else:
         st.warning("No diet recommendations available. Please check 'dietchartdataset.csv'.")
-
