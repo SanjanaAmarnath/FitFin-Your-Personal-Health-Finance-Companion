@@ -14,15 +14,21 @@ try:
 except FileNotFoundError:
     base64_image = None
 
-# Custom CSS for Background Image & Styling
+# Custom CSS for Dark Theme Styling
 if base64_image:
     page_bg_img = f'''
     <style>
     .stApp {{
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                    url("data:image/png;base64,{base64_image}") no-repeat center center fixed;
-        background-size: cover;
-        color: white;
+        background: #121212;
+        color: #ffffff;
+    }}
+    .sidebar .sidebar-content {{
+        background: #1e1e1e;
+    }}
+    .stButton > button {{
+        background: #bb86fc;
+        color: #000;
+        border-radius: 5px;
     }}
     </style>
     '''
