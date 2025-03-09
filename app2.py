@@ -102,7 +102,7 @@ if st.sidebar.button("Get Recommendation"):
     result = recommend_workout(steps, workout, sleep, bmi)
     st.markdown(result, unsafe_allow_html=True)
 
-    st.markdown("### <span style='color:red'>🥗 Recommended Diet Plan</span>", unsafe_allow_html=True)
+    st.markdown("### <span style='color:white'>🥗 Recommended Diet Plan</span>", unsafe_allow_html=True)
     if diet_chart != "No diet data available.":
         st.markdown(f"<span style='color:red'>🍽 **Recommended Meal:** {diet_chart}</span>", unsafe_allow_html=True)
     else:
